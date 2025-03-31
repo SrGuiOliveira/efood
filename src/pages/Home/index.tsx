@@ -1,7 +1,11 @@
 import Restaurant from '../../models/Restaurant'
-import ProductList from '../../components/ProductList'
+import RestaurantList from '../../components/RestaurantList'
 import hiokiSushi from '../../assets/hioki_sushi.png'
 import laDolceVita from '../../assets/laDolceVita.png'
+import Header from '../../components/Header'
+import { colors } from '../../styles/styles'
+import styled from 'styled-components'
+
 const restaurants: Restaurant[] = [
   {
     id: 1,
@@ -59,9 +63,21 @@ const restaurants: Restaurant[] = [
   }
 ]
 
+const Title = styled.h1`
+  color: ${colors.salmon};
+  font-size: 36px;
+  margin: 0 auto;
+  margin-top: 138px;
+  text-align: center;
+  width: 536px;
+`
+
 const Home = () => (
   <>
-    <ProductList restaurants={restaurants} />
+    <Header mode="home" size="big">
+      <Title>Viva experiências gastronômicas no conforto da sua casa</Title>
+    </Header>
+    <RestaurantList restaurants={restaurants} />
   </>
 )
 

@@ -1,23 +1,37 @@
 import styled from 'styled-components'
+import { HeroProps, Props } from '.'
 import { colors } from '../../styles/styles'
 
-export const Hero = styled.header`
+export const Hero = styled.header<HeroProps>`
   width: 100%;
-  height: 560px;
+  height: ${(props) => (props.size === 'big' ? '360px' : '186px')};
   background-size: cover;
   font-weight: bold;
-  height: 360px;
   text-align: center;
 `
 export const Logo = styled.img`
-  margin-top: 40px;
   width: 125px;
+  margin: 0 194px;
 `
-export const Title = styled.h1`
-  color: ${colors.salmon};
-  font-size: 36px;
-  margin: 0 auto;
-  margin-top: 138px;
-  text-align: center;
-  width: 536px;
+export const HeaderContainer = styled.div<Props>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+
+  span {
+    display: ${(props) => (props.mode === 'home' ? 'none' : 'block')};
+    color: ${colors.salmon};
+    font-size: 18px;
+    font-weight: bold;
+    width: 256px;
+  }
+
+  .span_restaurantes {
+    text-align: left;
+  }
+
+  .span_carrinho {
+    text-align: right;
+  }
 `

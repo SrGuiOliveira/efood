@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../styles/styles'
+import { Logo } from '../Header/styles'
 
 export const FooterContainer = styled.footer`
   background-color: ${colors.softBeige};
@@ -14,6 +15,10 @@ export const FooterContainer = styled.footer`
     color: ${colors.salmon};
     margin: 0 auto;
     margin-top: 80px;
+  }
+
+  ${Logo} {
+    padding-top: 40px;
   }
 `
 

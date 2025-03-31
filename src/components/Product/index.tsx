@@ -1,41 +1,19 @@
-import {
-  Card,
-  Category,
-  Description,
-  ScoreContainer,
-  Title,
-  TitleLine
-} from './styles'
-import Tag from '../Tag'
-import star from '../../assets/star.png'
 import { ButtonProduct } from '../Button/styles'
+import { Card, Description, Title } from './styles'
 
 type Props = {
-  category: string[]
-  description: string
   image: string
   title: string
-  score: number
+  description: string
 }
 
-const Product = ({ category, description, image, title, score }: Props) => (
+const ProductModel = ({ image, title, description }: Props) => (
   <Card>
     <img src={image} alt={title} />
-    <Category>
-      {category.map((category) => (
-        <Tag key={category}>{category}</Tag>
-      ))}
-    </Category>
-    <TitleLine>
-      <Title>{title}</Title>
-      <ScoreContainer>
-        <p>{score}</p>
-        <img src={star} alt="Star rating" />
-      </ScoreContainer>
-    </TitleLine>
+    <Title>{title}</Title>
     <Description>{description}</Description>
-    <ButtonProduct>Saiba mais</ButtonProduct>
+    <ButtonProduct>Adicionar ao carrinho</ButtonProduct>
   </Card>
 )
 
-export default Product
+export default ProductModel
