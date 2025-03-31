@@ -2,6 +2,7 @@ import { JSX } from 'react'
 import { HeaderContainer, Hero, Logo } from './styles'
 import background from '../../assets/background.png'
 import logo from '../../assets/logo.png'
+import { Link } from 'react-router-dom'
 
 export type HeroProps = {
   children?: JSX.Element
@@ -18,7 +19,9 @@ const Header = ({ children, size, mode }: HeaderProps) => (
     <div className="container">
       <HeaderContainer mode={mode}>
         <span className="span_restaurantes">Restaurantes</span>
-        <Logo src={logo} />
+        <Link to="/">
+          <Logo src={logo} alt="efood" />
+        </Link>
         <span className="span_carrinho">0 produto(s) no carrinho</span>
       </HeaderContainer>
       {children}

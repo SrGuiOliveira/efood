@@ -5,7 +5,7 @@ import LaDolceVita from './pages/LaDolceVita'
 const RoutesPages = () => (
   <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/ladolcevita" element={<LaDolceVita />} />
+    <Route path="/la-dolce-vita-trattoria" element={<LaDolceVita />} />
   </Routes>
 )
 
