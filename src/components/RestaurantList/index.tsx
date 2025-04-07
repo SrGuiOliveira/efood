@@ -1,26 +1,40 @@
-import Restaurant from '../../models/Restaurant'
+import { useEffect, useState } from 'react'
 import RestaurantModel from '../Restaurant'
 import { List } from './styles'
+import { Restaurant } from '../../types/Restaurants'
 
-type Props = {
-  restaurants: Restaurant[]
+const RestaurantList = () => {
+  const [restaurants, setRestaurants] = useState<Restaurant[]>([])
+
+  useEffect(() => {
+    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
+      .then((res) => res.json())
+      .then((data) => setRestaurants(data))
+  }, [])
+
+  if (!restaurants) {
+    return <h3>Carregando...</h3>
+  }
+
+  return (
+    <div className="container">
+      <List>
+        {restaurants?.map((restaurant) => (
+          <li key={restaurant.id}>
+            <RestaurantModel
+              id={restaurant.id}
+              titulo={restaurant.titulo}
+              destacado={restaurant.destacado}
+              tipo={restaurant.tipo}
+              avaliacao={restaurant.avaliacao}
+              descricao={restaurant.descricao}
+              capa={restaurant.capa}
+            />
+          </li>
+        ))}
+      </List>
+    </div>
+  )
 }
-
-const RestaurantList = ({ restaurants }: Props) => (
-  <div className="container">
-    <List>
-      {restaurants.map((restaurant) => (
-        <RestaurantModel
-          key={restaurant.id}
-          category={restaurant.category}
-          description={restaurant.description}
-          image={restaurant.image}
-          score={restaurant.score}
-          title={restaurant.title}
-        />
-      ))}
-    </List>
-  </div>
-)
 
 export default RestaurantList

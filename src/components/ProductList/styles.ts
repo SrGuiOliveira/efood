@@ -6,4 +6,9 @@ export const List = styled.ul`
   column-gap: 32px;
   row-gap: 32px;
   margin-top: 56px;
+
+  img {
+    width: 304px;
+    height: 167px;
+  }
 `

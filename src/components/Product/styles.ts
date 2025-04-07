@@ -5,14 +5,17 @@ import { ButtonProduct } from '../Button/styles'
 export const Card = styled.div`
   background-color: ${colors.salmon};
   padding: 8px;
-
-  ${ButtonProduct} {
-    background-color: ${colors.softBeige};
-    color: ${colors.salmon};
-    width: 100%;
-    margin-top: 8px;
-    padding: 8px;
-  }
+  position: relative;
+  height: 100%;
+`
+export const ButtonMenu = styled(ButtonProduct)`
+  background-color: ${colors.softBeige};
+  color: ${colors.salmon};
+  position: absolute;
+  text-align: center;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
 `
 export const Title = styled.h3`
   font-size: 16px;
@@ -25,4 +28,5 @@ export const Description = styled.p`
   font-weight: 400;
   line-height: 22px;
   color: ${colors.softBeige};
+  margin-bottom: 32px;
 `
