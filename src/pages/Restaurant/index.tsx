@@ -1,27 +1,17 @@
-import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { useState } from 'react'
 import Banner from '../../components/Banner'
 import Header from '../../components/Header'
 import ProductList from '../../components/ProductList'
 import Modal from '../../components/Modal'
-import { Restaurant } from '../../types/Restaurants'
+import { useGetRestaurantQuery } from '../../services/api'
 import { MenuItem } from '../../types/MenuItem'
 
 const RestaurantProducts = () => {
   const { id } = useParams()
-  const [restaurant, setRestaurant] = useState<Restaurant>()
-  const [menu, setMenu] = useState<MenuItem[]>([])
   const [selectedProduct, setSelectedProduct] = useState<MenuItem | null>(null)
-
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setRestaurant(data)
-        setMenu(data.cardapio)
-      })
-      .catch((err) => console.error('Erro ao buscar restaurante:', err))
-  }, [id])
+  const { data: restaurant } = useGetRestaurantQuery(id!)
+  const menu = restaurant?.cardapio
 
   const handleProductClick = (product: MenuItem) => {
     setSelectedProduct(product)
