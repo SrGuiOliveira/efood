@@ -2,7 +2,7 @@ import { ButtonProduct } from './styles'
 
 type Props = {
   to?: string
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 const Button = ({ to, children }: Props) =>

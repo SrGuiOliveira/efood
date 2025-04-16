@@ -1,11 +1,16 @@
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import Banner from '../../components/Banner'
 import Header from '../../components/Header'
 import ProductList from '../../components/ProductList'
 import Modal from '../../components/Modal'
 import { useGetRestaurantQuery } from '../../services/api'
 import { MenuItem } from '../../types/MenuItem'
+import Cart from '../../components/Cart'
+import { add, open } from '../../store/reducers/cart'
+
+
 
 const RestaurantProducts = () => {
   const { id } = useParams()
@@ -19,6 +24,14 @@ const RestaurantProducts = () => {
 
   const closeModal = () => {
     setSelectedProduct(null)
+  }
+
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    dispatch(add(selectedProduct!))
+    dispatch(open())
+    closeModal()
   }
 
   if (!menu) {
@@ -45,8 +58,10 @@ const RestaurantProducts = () => {
           preco={selectedProduct.preco}
           descricao={selectedProduct.descricao}
           onClose={closeModal}
+          onAdd={addToCart}
         />
       )}
+      <Cart />
     </div>
   )
 }

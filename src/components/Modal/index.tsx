@@ -3,13 +3,15 @@ import close from '../../assets/close.png'
 import { ButtonProduct } from '../Button/styles'
 import { MenuItem } from '../../types/MenuItem'
 
-const Modal = ({ foto, preco, nome, descricao, porcao, onClose }: MenuItem) => {
-  const formatPrice = (preco = 0) => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(preco)
-  }
+// eslint-disable-next-line react-refresh/only-export-components
+export const formatPrice = (preco = 0) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(preco)
+}
+
+const Modal = ({ foto, preco, nome, descricao, porcao, onClose, onAdd }: MenuItem) => {
 
   return (
     <>
@@ -26,7 +28,7 @@ const Modal = ({ foto, preco, nome, descricao, porcao, onClose }: MenuItem) => {
               <h3>{nome}</h3>
               <p>{descricao}</p>
               <span>Serve: {porcao}</span>
-              <ButtonProduct>
+              <ButtonProduct onClick={onAdd}>
                 Adicionar ao carrinho - {formatPrice(preco)}
               </ButtonProduct>
             </div>

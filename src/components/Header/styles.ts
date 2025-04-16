@@ -29,9 +29,19 @@ export const HeaderContainer = styled.div<Props>`
 
   .span_restaurantes {
     text-align: left;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(50%);
+    }
   }
 
   .span_carrinho {
     text-align: right;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(50%);
+    }
   }
 `

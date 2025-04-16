@@ -6,4 +6,5 @@ export type MenuItem = {
   descricao: string
   porcao: string
   onClose?: () => void
+  onAdd?: () => void
 }
