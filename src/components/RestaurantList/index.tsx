@@ -1,13 +1,14 @@
 import RestaurantModel from '../Restaurant'
 import { List } from './styles'
 import { useGetRestaurantsQuery } from '../../services/api'
+import Loader from '../Loader'
 
 const RestaurantList = () => {
-  const { data: restaurants } = useGetRestaurantsQuery()
+  const { data: restaurants, isLoading } = useGetRestaurantsQuery();
 
-  if (!restaurants) {
-    return <h3>Carregando...</h3>
-  }
+if (isLoading) {
+  return <Loader />;
+}
 
   return (
     <div className="container">

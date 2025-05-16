@@ -35,7 +35,8 @@ export const Sidebar = styled.aside`
   max-width: 360px;
   width: 100%;
 
-  > button {
+  > button,
+  form button {
     width: 100%;
     background-color: ${colors.softBeige};
     color: ${colors.salmon};
@@ -44,6 +45,76 @@ export const Sidebar = styled.aside`
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
+
+    &:hover {
+      filter: brightness(120%);
+    }
+  }
+
+  form h4,
+  .success,
+  .successMessage {
+    color: ${colors.softBeige};
+    padding-bottom: 8px;
+  }
+
+  .success {
+    padding-bottom: 16px;
+  }
+
+  .successMessage {
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .inputRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .inputgroup {
+    display: block;
+  }
+
+  label {
+    color: ${colors.softBeige};
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 700;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    background-color: ${colors.softBeige};
+    height: 32px;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .cvv {
+    width: 87px;
+  }
+
+  .cardNumber {
+    width: 228px;
+  }
+
+  .buttonGroup {
+    margin-top: 24px;
+
+    button {
+      margin-bottom: 8px;
+    }
+  }
+
+  .error {
+    border: 2px solid red;
   }
 `
 export const Warning = styled.div`

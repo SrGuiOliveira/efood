@@ -5,6 +5,7 @@ import RoutesPages from './routes'
 import { GlobalStyle } from './styles/styles'
 import Footer from './components/Footer'
 import { store } from './store'
+
 function App() {
   return (
     <Provider store={store}>

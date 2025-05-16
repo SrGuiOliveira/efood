@@ -9,13 +9,14 @@ import { useGetRestaurantQuery } from '../../services/api'
 import { MenuItem } from '../../types/MenuItem'
 import Cart from '../../components/Cart'
 import { add, open } from '../../store/reducers/cart'
+import Loader from '../../components/Loader'
 
 
 
 const RestaurantProducts = () => {
   const { id } = useParams()
   const [selectedProduct, setSelectedProduct] = useState<MenuItem | null>(null)
-  const { data: restaurant } = useGetRestaurantQuery(id!)
+  const { data: restaurant} = useGetRestaurantQuery(id!)
   const menu = restaurant?.cardapio
 
   const handleProductClick = (product: MenuItem) => {
@@ -35,7 +36,7 @@ const RestaurantProducts = () => {
   }
 
   if (!menu) {
-    return <h3>Carregando...</h3>
+    return <Loader />
   }
 
   return (
