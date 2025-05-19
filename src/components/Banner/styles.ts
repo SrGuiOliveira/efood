@@ -6,6 +6,10 @@ export const BannerContainer = styled.div`
   height: 280px;
   position: relative;
 
+  @media (max-width: 768px) {
+    height: 140px;
+  }
+
   &::after {
     position: absolute;
     top: 0;
@@ -23,6 +27,10 @@ export const BannerContainer = styled.div`
     color: ${colors.white};
     position: absolute;
     bottom: 32px;
+
+    @media (max-width: 768px) {
+      font-size: 26px;
+    }
   }
 
   p {
@@ -31,6 +39,10 @@ export const BannerContainer = styled.div`
     color: ${colors.white};
     padding-top: 25px;
     font-size: 32px;
+
+    @media (max-width: 768px) {
+      font-size: 26px;
+    }
   }
 
   .titles p,

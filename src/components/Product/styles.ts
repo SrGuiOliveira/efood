@@ -7,6 +7,12 @@ export const Card = styled.div`
   padding: 8px;
   position: relative;
   height: 100%;
+
+  img {
+    object-fit: cover;
+    text-align: center;
+    width: 100%;
+  }
 `
 export const ButtonMenu = styled(ButtonProduct)`
   background-color: ${colors.softBeige};

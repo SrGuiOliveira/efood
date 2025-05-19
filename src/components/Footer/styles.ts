@@ -9,16 +9,26 @@ export const FooterContainer = styled.footer`
   margin-top: 120px;
   text-align: center;
 
+  @media (max-width: 768px) {
+    height: 240px;
+  }
+
   p {
     font-size: 10px;
     width: 480px;
     color: ${colors.salmon};
     margin: 0 auto;
     margin-top: 80px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-top: 40px;
+    }
   }
 
   ${Logo} {
     padding-top: 40px;
+    margin: 0 auto;
   }
 `
 

@@ -29,6 +29,12 @@ export const ModalContent = styled.div`
   background-color: ${colors.salmon};
   color: ${colors.white};
 
+  @media (max-width: 1023px) {
+    margin: 0 10px;
+    padding: 0 10px;
+    height: 550px;
+  }
+
   header {
     display: flex;
     justify-content: end;
@@ -47,23 +53,46 @@ export const ModalContent = styled.div`
   .iconDetails {
     display: flex;
 
+    @media (max-width: 1023px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     h3 {
       font-size: 18px;
       font-weight: 900;
+
+      @media (max-width: 1023px) {
+        margin-top: 4px;
+        text-align: center;
+      }
     }
     img {
       width: 280px;
       height: 280px;
       object-fit: cover;
       margin: 0 32px;
+
+      @media (max-width: 1023px) {
+        width: 100%;
+        margin: 0;
+      }
     }
 
     p {
-      width: 656px;
       line-height: 22px;
       margin-top: 16px;
       font-size: 14px;
       font-weight: 400;
+
+      @media (min-width: 1023px) {
+        width: 656px;
+      }
+
+      @media (max-width: 1023px) {
+        line-height: 18px;
+        margin-top: 8px;
+      }
     }
 
     span {
@@ -72,6 +101,12 @@ export const ModalContent = styled.div`
       margin-bottom: 16px;
       font-size: 14px;
       font-weight: 400;
+
+      @media (max-width: 1023px) {
+        line-height: 14px;
+        margin-top: 8px;
+        font-weight: bold;
+      }
     }
 
     ${ButtonProduct} {

@@ -20,9 +20,21 @@ export const Card = styled.div`
     width: 472px;
     height: 217px;
     object-fit: center;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `
-export const Title = styled.h3``
+export const Title = styled.h3`
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+`
 
 export const Description = styled.p`
   color: ${colors.salmon};
@@ -45,6 +57,10 @@ export const ScoreContainer = styled.div`
   img {
     width: 21px;
     height: 21px;
+
+    @media (max-width: 768px) {
+      width: 18px;
+    }
   }
 `
 export const TitleLine = styled.div`
@@ -55,6 +71,10 @@ export const TitleLine = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 8px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `
 
 export const Category = styled.div`

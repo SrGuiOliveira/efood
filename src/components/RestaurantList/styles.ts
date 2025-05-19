@@ -7,7 +7,11 @@ export const List = styled.ul`
   row-gap: 48px;
   margin-top: 80px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 767px) {
     grid-template-columns: 1fr;
   }
 `

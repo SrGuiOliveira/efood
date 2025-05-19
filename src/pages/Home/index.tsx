@@ -10,6 +10,12 @@ const Title = styled.h1`
   margin-top: 138px;
   text-align: center;
   width: 536px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 32px;
+    font-size: 24px;
+  }
 `
 
 const Home = () => (
