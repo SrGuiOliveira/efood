@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import * as Yup from 'yup'
 import { useFormik } from 'formik'
-import MaskedInput from "react-text-mask";
+import InputMask from "react-input-mask";
 
 
 import { close, remove } from "../../store/reducers/cart"
@@ -196,7 +196,7 @@ const Cart = () => {
                     <div className="inputRow">
                       <div className="inputGroup">
                         <label htmlFor="deliveryCep">CEP</label>
-                        <MaskedInput mask={[/\d/, /\d/, /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/]} id="deliveryCep" type="text" name="deliveryCep" value={form.values.deliveryCep} onChange={form.handleChange} onBlur={form.handleBlur} className={checkInputHasError('deliveryCep') ? 'error' : ''}/>
+                        <InputMask mask="99999-999" id="deliveryCep" type="text" name="deliveryCep" value={form.values.deliveryCep} onChange={form.handleChange} onBlur={form.handleBlur} className={checkInputHasError('deliveryCep') ? 'error' : ''}/>
                       </div>
                       <div className="inputGroup">
                         <label htmlFor="deliveryNumber">Número</label>
@@ -223,21 +223,21 @@ const Cart = () => {
                       <div className="inputRow">
                         <div className="inputGroup cardNumber">
                           <label htmlFor="cardNumber">Número do cartão</label>
-                          <MaskedInput mask={[/\d/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/]} id="cardNumber" type="text" name="cardNumber" value={form.values.cardNumber} onChange={form.handleChange} onBlur={form.handleBlur} className={checkInputHasError('cardNumber') ? 'error' : ''}/>
+                          <InputMask mask="9999 9999 9999 9999" id="cardNumber" type="text" name="cardNumber" value={form.values.cardNumber} onChange={form.handleChange} onBlur={form.handleBlur} className={checkInputHasError('cardNumber') ? 'error' : ''}/>
                         </div>
                         <div className="inputGroup cvv">
                           <label htmlFor="cardCode">CVV</label>
-                          <MaskedInput mask={[/\d/, /\d/, /\d/]}  id="cardCode" type="text" name="cardCode" value={form.values.cardCode} onChange={form.handleChange} onBlur={form.handleBlur} className={checkInputHasError('cardCode') ? 'error' : ''}/>
+                          <InputMask mask="999"  id="cardCode" type="text" name="cardCode" value={form.values.cardCode} onChange={form.handleChange} onBlur={form.handleBlur} className={checkInputHasError('cardCode') ? 'error' : ''}/>
                         </div>
                       </div>
                       <div className="inputRow">
                         <div className="inputGroup">
                           <label htmlFor="expiresMonth">Mês de vencimento</label>
-                          <MaskedInput mask={[/\d/, /\d/]} id="expiresMonth" type="text" name="expiresMonth" value={form.values.expiresMonth} onChange={form.handleChange} onBlur={form.handleBlur} className={checkInputHasError('expiresMonth') ? 'error' : ''}/>
+                          <InputMask mask="99" id="expiresMonth" type="text" name="expiresMonth" value={form.values.expiresMonth} onChange={form.handleChange} onBlur={form.handleBlur} className={checkInputHasError('expiresMonth') ? 'error' : ''}/>
                         </div>
                         <div className="inputGroup">
                           <label htmlFor="expiresYear">Ano de vencimento</label>
-                          <MaskedInput mask={[/\d/, /\d/]} min={2} id="expiresYear" type="text" name="expiresYear" value={form.values.expiresYear} onChange={form.handleChange} onBlur={form.handleBlur} className={checkInputHasError('expiresYear') ? 'error' : ''}/>
+                          <InputMask mask="99" min={2} id="expiresYear" type="text" name="expiresYear" value={form.values.expiresYear} onChange={form.handleChange} onBlur={form.handleBlur} className={checkInputHasError('expiresYear') ? 'error' : ''}/>
                         </div>
                       </div>
                     <div className="buttonGroup">
