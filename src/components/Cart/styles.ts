@@ -114,7 +114,13 @@ export const Sidebar = styled.aside`
   }
 
   .error {
-    border: 2px solid red;
+    border: 4px solid red;
+  }
+
+  .messageError {
+    font-weight: bold;
+    display: block;
+    color: darkred;
   }
 `
 export const Warning = styled.div`
