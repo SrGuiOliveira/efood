@@ -1,54 +1,51 @@
-# React + TypeScript + Vite
+# 🍽 eFood
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+eFood é um **e-commerce de restaurantes**, reunindo diversos estabelecimentos em um só lugar. A aplicação consome uma **API externa** para carregar os restaurantes disponíveis e seus respectivos cardápios, permitindo que os usuários **adicionem produtos ao carrinho** e finalizem pedidos por meio de um **formulário dinâmico**. A compra é processada via **API**, que retorna um **ID do pedido**. O site é totalmente responsivo.
 
-Currently, two official plugins are available:
+## 🌐 Acesse o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A aplicação está hospedada na Vercel. Você pode acessá-la através do seguinte link:
 
-## Expanding the ESLint configuration
+👉 **[Lista Telefônica - Acesse Aqui](https://efood-rho-ten.vercel.app/)**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🚀 Funcionalidades
+- Listagem de restaurantes disponíveis através da API.
+- Visualização de cardápios e detalhes de cada estabelecimento.
+- Adicionar produtos ao carrinho e calcular o valor total da compra.
+- Formulário de finalização do pedido, com validação de dados via Formik & Yup.
+- Integração com API para gerar ID do pedido na confirmação da compra.
+- Interface responsiva, adaptada para desktops, tablets e smartphones.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname
-    }
-  }
-})
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Tecnologias utilizadas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **React** – Biblioteca para construção da interface
+- **Redux Toolkit** – Gerenciamento de estado
+- **React Router DOM** – Navegação entre páginas
+- **Formik & Yup** – Validação de formulários
+- **Styled Components** – Estilização dinâmica
+- **TypeScript** – Tipagem estática
+- **Vite** – Ferramenta de build otimizada
+- **ESLint & Prettier** – Padronização de código
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules
-  }
-})
-```
+📦 Dependências Principais
+- `@reduxjs/toolkit` para gerenciamento de estado.
+- `react-router-dom` para navegação entre as páginas.
+- `react-input-mask` para máscaras de input.
+- `styled-components` para estilização.
+- `formik` e `yup` para validação de formulários.
+
+## 📝 Como Executar o Projeto Localmente
+
+1. Clone este repositório:
+   ```bash
+  git clone https://github.com/seu-usuario/efood.git
+
+2. Acesse a pasta do projeto:
+    cd efood
+
+3. Instale as dependências:
+    npm install --legacy-peer-deps
+
+4. Inicie o servidor de desenvolvimento:
+    npm start
